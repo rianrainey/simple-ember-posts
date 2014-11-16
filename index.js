@@ -1,5 +1,9 @@
 App = Ember.Application.create();
-App.ApplicationAdapter = DS.FixtureAdapter.extend(); // using fixtures instead of persitant backend 
+
+App.ApplicationSerializer = DS.LSSerializer.extend();
+App.ApplicationAdapter = DS.LSAdapter.extend({
+  namespace: 'posts-emberjs'
+});
 
 App.Router.map(function() {
   this.resource('posts', { path: '/' }); // render posts template
@@ -14,6 +18,24 @@ App.PostsRoute = Ember.Route.extend({
 App.Post = DS.Model.extend({
   title: DS.attr('string'),
   body: DS.attr('string')
+});
+
+App.PostsController = Ember.ArrayController.extend({
+  actions: {
+    createPost: function () {
+      var title = this.get('newPost');
+      if (!title.trim()) { return; }
+
+      var post = this.store.createRecord('post', {
+        title: title
+      });
+
+      // Clear input field
+      this.set('newPost', '');
+
+      post.save();
+    }
+  }
 });
 
 App.Post.FIXTURES = [

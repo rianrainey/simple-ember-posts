@@ -3807,7 +3807,7 @@ enifed("ember-application/system/resolver",
       _logLookup: function(found, parsedName) {
         var symbol, padding;
 
-        if (found) { symbol = '[✓]'; }
+        if (found) { symbol = '[âœ“]'; }
         else       { symbol = '[ ]'; }
 
         if (parsedName.fullName.length > 60) {
@@ -8091,7 +8091,7 @@ enifed("ember-handlebars/helpers/binding",
       ```
 
       All three strategies - string return value, boolean return value, and
-      hard-coded value – can be combined in a single declaration:
+      hard-coded value â€“ can be combined in a single declaration:
 
       ```handlebars
       <img {{bind-attr class=":class-name-to-always-apply view.someBool:class-name-if-true view.someProperty"}}>
@@ -18915,7 +18915,7 @@ enifed("ember-metal/utils",
 
       Some numbers: http://jsperf.com/eval-vs-keys/8
 
-      Known Trick™
+      Known Trickâ„¢
 
       @private
       @return {String} interned version of the provided string
@@ -30045,7 +30045,7 @@ enifed("ember-runtime/mixins/array",
         This returns the objects at the specified indexes, using `objectAt`.
 
         ```javascript
-        var arr = ['a', 'b', 'c', 'd'];
+        var arr =Â ['a', 'b', 'c', 'd'];
 
         arr.objectsAt([0, 1, 2]);  // ['a', 'b', 'c']
         arr.objectsAt([2, 3, 4]);  // ['c', 'd', undefined]
@@ -48858,7 +48858,7 @@ enifed("rsvp/promise",
     /**
       Promise objects represent the eventual result of an asynchronous operation. The
       primary way of interacting with a promise is through its `then` method, which
-      registers callbacks to receive either a promise’s eventual value or the reason
+      registers callbacks to receive either a promiseâ€™s eventual value or the reason
       why the promise cannot be fulfilled.
 
       Terminology
@@ -49738,4 +49738,3 @@ enifed("rsvp/utils",
 requireModule("ember");
 
 })();
-
