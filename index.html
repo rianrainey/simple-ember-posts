@@ -6,11 +6,22 @@
 </head>
 
 <body>
-  <h1>Welcome to the Ember.js Blog</h1>
   <script type="text/x-handlebars">
-    {{input type="text" value=title placeholder="Enter Post Title"}}
+    {{outlet}}
+  </script>
 
-    {{title}}
+  <section>
+    <h1>Welcome to the Ember.js Blog</h1>
+    <script type="text/x-handlebars" data-template-name="posts">
+      <ul>
+      {{#each}}
+        <li>{{title}}-{{blog-comment}}</li>
+      {{/each}}
+      </ul>
+    </script>
+
+  <script type="text/x-handlebars" id="components/blog-comment">
+    <span>This is a comment</span>
   </script>
 
   <script src="./libs/jquery.min.js"></script>
