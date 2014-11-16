@@ -6,16 +6,19 @@
 </head>
 
 <body>
+  <h1>Welcome to the Ember.js Blog</h1>
   <script type="text/x-handlebars">
     {{outlet}}
   </script>
 
   <section>
-    <h1>Welcome to the Ember.js Blog</h1>
     <script type="text/x-handlebars" data-template-name="posts">
       <ul>
       {{#each}}
         <li>{{title}}</li>
+        <ul>
+          <li>{{body}}</li>
+        </ul>
       {{/each}}
       </ul>
     </script>
