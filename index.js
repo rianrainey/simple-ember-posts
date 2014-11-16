@@ -1,5 +1,5 @@
 App = Ember.Application.create();
-App.ApplicationAdapter = DS.FixtureAdapter.extend(); // using fixtures instead of persitant backend 
+App.ApplicationAdapter = DS.FixtureAdapter.extend(); // using fixtures instead of persitant backend
 
 App.Router.map(function() {
   this.resource('posts', { path: '/' }); // render posts template
