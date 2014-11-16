@@ -16,8 +16,8 @@
       {{input type="text" id="new-post" placeholder="Enter New Title" value=newPost action="createPost"}}
 
       <ul>
-      {{#each}}
-        <li>{{title}}</li>
+      {{#each itemController="post"}}
+        <li>{{title}} <button {{action "removePost"}} class="destroy"></button></li>
       {{/each}}
       </ul>
     </script>

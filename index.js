@@ -20,6 +20,16 @@ App.Post = DS.Model.extend({
   body: DS.attr('string')
 });
 
+App.PostController = Ember.ObjectController.extend({
+  actions: {
+    removePost: function() {
+      var post = this.get('model');
+      post.deleteRecord();
+      post.save();
+    }
+  }
+});
+
 App.PostsController = Ember.ArrayController.extend({
   actions: {
     createPost: function () {
