@@ -1,9 +1,6 @@
 App = Ember.Application.create();
 
-App.ApplicationSerializer = DS.LSSerializer.extend();
-App.ApplicationAdapter = DS.LSAdapter.extend({
-  namespace: 'posts-emberjs'
-});
+App.ApplicationAdapter = DS.LSAdapter.extend();
 
 App.Router.map(function() {
   this.resource('posts', { path: '/' }); // render posts template
@@ -34,7 +31,6 @@ App.PostsController = Ember.ArrayController.extend({
   actions: {
     createPost: function () {
       var title = this.get('newPost');
-      if (!title.trim()) { return; }
 
       var post = this.store.createRecord('post', {
         title: title
